@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
-export default function App() {
+const App = () => {
+  const [count, setCount] = useState(10);
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <button onClick={() => setCount(count + 2)}>+</button>
+      <button onClick={() => setCount(count - 1)}>-</button>
+      <button onClick={() => setCount(0)}>reset</button>
+      <div>{count}</div>
     </div>
   );
-}
+};
+
+export default App;
